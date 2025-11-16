@@ -13,7 +13,7 @@ export default function Notes() {
 
     const fetchNotes = async () => {
         try {
-            const res = await fetch("https://todo-backend-4xu0.onrender.com", {
+            const res = await fetch("https://todo-backend-4xu0.onrender.com/api/notes", {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -32,7 +32,7 @@ export default function Notes() {
         e.preventDefault();
         if (!title) return;
         try {
-            const res = await fetch("https://todo-backend-4xu0.onrender.com", {
+            const res = await fetch("https://todo-backend-4xu0.onrender.com/api/notes", {
                 method: "POST",
                 headers: { 
                     "Content-Type": "application/json",
@@ -61,7 +61,7 @@ export default function Notes() {
         e.preventDefault();
         if (!title) return;
         try {
-            await fetch(`https://todo-backend-4xu0.onrender.com${editingId}`, {
+            await fetch(`https://todo-backend-4xu0.onrender.com/api/notes/${editingId}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json",
                            "Authorization": `Bearer ${localStorage.getItem("token")}`
@@ -83,7 +83,7 @@ export default function Notes() {
     // Delete note
     const handleDelete = async (id) => {
         try {
-            await fetch(`https://todo-backend-4xu0.onrender.com${id}`, { 
+            await fetch(`https://todo-backend-4xu0.onrender.com/api/notes/${id}`, { 
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",
