@@ -31,36 +31,40 @@ export default function Register(){
     };
 
     return (
-        <div className="form-container">
+        <div className="form-container glass-card">
             <h2>Register</h2>
-            {message && <p>{message}</p>}
+            {message && <p className="error-text">{message}</p>}
             <form onSubmit={handleSubmit}>
+                <label className="input-label">Username</label>
                 <input
+                  className="input-field"
                   type="text"
-                  name="Username"
+                  name="Enter username"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   required
                 />
-                <label>Email</label>
+                <label className="input-label">Email</label>
                 <input
+                  className="input-field"
                   type="email"
-                  placeholder="Email"
+                  placeholder="Enter email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}  
                   required
                 />
-                <label>Password</label>
+                <label className="input-label">Password</label>
                 <input
+                  className="input-field"
                   type="password"
                   placeholder="Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
                 />
-                <button type="submit">Register</button>    
+                <button className="btn-primary" type="submit">Register</button>    
             </form>
-            <p>
+            <p style={{ marginTop: "12px", textAlign: "center" }}>
                 Already have an account? <Link to="/login">Login</Link>
             </p>
         </div>

@@ -114,6 +114,7 @@ export default function Notes() {
               onSubmit={editingId ? handleUpdate : handleAdd}
               className="notes-form"
             >
+                <label className="input-label">Title</label>
                 <input
                   type="text"
                   className="input-field"
@@ -123,6 +124,7 @@ export default function Notes() {
                   required
                 />
 
+                <label className="input-label">Content</label>
                 <textarea
                   className="textarea-field"
                   placeholder="Note content"
