@@ -40,7 +40,7 @@ export default function Login(){
             <form onSubmit={handleSubmit}>
                 <label className="input-label">Email</label>
                 <input
-                  className="input-filed"
+                  className="input-field"
                   type="email"
                   placeholder="Email your email"
                   value={email}
